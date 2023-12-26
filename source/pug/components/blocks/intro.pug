@@ -1,0 +1,13 @@
+mixin intro()
+  .intro
+    .container
+      h1.intro__title.title.title--h1.title--uppercase VANMOOf X4
+
+      .intro__text
+        p Rule the road with the VanMoof x4. Perfect for controlled cruising and longer rides.
+
+      .intro__order-now
+        +btn({text: "Order now"}).btn--black.btn--radius-100.intro__btn(data-open-modal="order-now")
+
+    .intro__image
+      +picture("content", "img", "jpg", 955, 950, "img")

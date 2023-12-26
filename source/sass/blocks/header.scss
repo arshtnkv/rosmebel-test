@@ -1,0 +1,156 @@
+.header {
+  padding: 19px 0 18px 0;
+
+  background-color: $color-floral-White;
+  border-bottom: 1px solid rgba($color-concrete, 0.4);
+  z-index: 30;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    @media (max-width: 1023px) {
+      background-color: $color-default-white;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      left: 0;
+      opacity: 0;
+      margin: 0;
+      padding: 123px 20px 20px 20px;
+      position: fixed;
+      pointer-events: none;
+      top: 0;
+      transition: background-color 0.3s ease;
+      right: 0;
+      visibility: hidden;
+      z-index: 20;
+    }
+
+    .is-open & {
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+
+      .header__item {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    max-width: 550px;
+    padding: 0;
+
+    @media (max-width: 1023px) {
+      align-items: flex-start;
+      flex-direction: column;
+      margin: 0 0 70px 0;
+      max-width: unset;
+    }
+
+    @media (max-width: 767px) {
+      margin: 0 0 62px 0;
+    }
+  }
+
+  &__item {
+    @media (max-width: 1023px) {
+      opacity: 0;
+      transition: opacity ease-out 0.15s, transform ease-out 0.15s;
+      transform: translateX(-15px);
+    }
+
+    &:not(:last-child) {
+      margin: 0 30px 0 0;
+
+      @media (max-width: 1023px) {
+        margin: 0 0 20px 0;
+      }
+
+      @media (max-width: 767px) {
+        margin: 0 0 20px 0;
+      }
+    }
+  }
+
+  &__order-now {
+    display: none;
+
+    @include vp-1023 {
+      display: block;
+      max-width: 167px;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    color: $color-accent-main;
+    transition: color 0.3s ease;
+
+    @media (max-width: 1023px) {
+      font-size: 24px;
+      line-height: 25px;
+    }
+
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        &:not(span) {
+          color: $color-dark-gray;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 309px;
+    font-size: 16px;
+
+    @include vp-1023 {
+      min-width: 18px;
+      margin-left: auto;
+    }
+  }
+}
+
+.geoblock {
+  display: flex;
+  margin-right: 27px;
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.location {
+  margin-right: 12px;
+}
+
+.basket {
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    width: 17px;
+    height: 21px;
+    fill: $color-accent-main;
+  }
+}

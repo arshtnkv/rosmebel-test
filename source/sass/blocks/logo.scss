@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 140px;
+    height: 20px;
+    color: $color-accent-main;
+  }
+
+  .is-open & {
+    position: relative;
+    z-index: 25;
+  }
+}

@@ -1,0 +1,87 @@
+.intro {
+  position: relative;
+
+  .container {
+    padding-top: 126px;
+
+    @include vp-1023 {
+      padding-top: 60px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 80px;
+
+    @include vp-1023 {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    max-width: 520px;
+    margin-bottom: 40px;
+    line-height: 31px;
+
+    @include vp-1023 {
+      margin: 0 auto 20px auto;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    p {
+      margin: 0 0 10px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__btn {
+    @include vp-1023 {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 100vh;
+
+    @include vp-1023 {
+      position: relative;
+      left: 0;
+      right: unset;
+
+      width: 100%;
+    }
+
+    z-index: -1;
+    border-radius: 0 0 0 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      border-radius: 0 0 0 20px;
+
+      @include vp-1023 {
+        height: auto;
+        border-radius: 0 0 20px 20px;
+      }
+    }
+  }
+
+  &__order-now {
+    max-width: 167px;
+
+    @include vp-1023 {
+      margin: 0 auto;
+    }
+  }
+}

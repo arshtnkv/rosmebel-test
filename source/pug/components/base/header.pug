@@ -1,0 +1,53 @@
+mixin header(headerMods, currentUrl)
+  -
+    const headerLinks = [
+      {
+        href: "#",
+        text: "Just ride"
+      },
+      {
+        href: "#",
+        text: "About"
+      },
+      {
+        href: "#",
+        text: "Features"
+      },
+      {
+        href: "#",
+        text: "Specifications"
+      },
+      {
+        href: "#",
+        text: "Faq"
+      },
+    ];
+
+  header.header(class=headerMods, data-header)
+    .container
+      nav.header__nav
+        ul.header__list
+          each link in headerLinks
+            - const activeState = currentUrl === link.href
+            li.header__item
+              if(activeState)
+                span.header__link.is-active= link.text
+              else
+                a.header__link(href=link.href)= link.text
+        .header__order-now
+          +btn({text: "Order now"}).btn--black.btn--radius-100(data-open-modal="order-now")
+
+      +logo(currentUrl).header__logo
+
+      .header__info
+        .geoblock
+          .location#location New York, NY
+
+          .clock#clock
+
+        a.link.basket(href="#", aria-label="Корзина")
+          +icon("basket", 17, 21)
+
+      button.header__burger.burger.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
+        +icon("burger", 18, 10).burger__open
+        +icon("close", 24, 25).burger__close

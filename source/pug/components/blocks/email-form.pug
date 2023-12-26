@@ -1,0 +1,19 @@
+mixin email-form()
+  .email-form(data-form-validate, data-callback="base")
+    form(action="#", method="post")
+      +custom-input({
+        inputType: "email",
+        inputLabel: "Email",
+        inputName: "user-mail",
+        inputPlaceholder: "Email",
+      }).email-form__input(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
+
+      +custom-toggle({
+        inputLabel: "I&nbsp;agree to&nbsp;",
+        inputLink: "privacy policy.",
+        inputName: "user-agreement",
+        inputValue: "user-agreement-1",
+        inputChecked: false
+      }).custom-toggle--checkbox.email-form__input(data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению")
+
+      +btn({text: "Send me&nbsp;updates", type: "submit"}).btn--black.btn--radius-100.email-form__submit

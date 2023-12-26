@@ -1,0 +1,15 @@
+.link {
+  color: inherit;
+  transition: opacity $trans-default;
+
+  @include hover-focus {
+    opacity: 0.7;
+    transition: opacity $trans-default;
+  }
+
+  &--underline {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: $color-pink-swan;
+  }
+}

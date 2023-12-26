@@ -1,0 +1,31 @@
+.title {
+  margin: 0;
+  font-weight: 400;
+  color: inherit;
+
+  &--h1 {
+    font-family: $ff-montserrat;
+    font-size: 170px;
+    line-height: 136px;
+
+    @include vp-1439 {
+      font-size: 130px;
+      line-height: 116px;
+    }
+
+    @include vp-1023 {
+      font-size: 36px;
+      line-height: 26px;
+    }
+  }
+
+  &--h2 {
+    font-family: $ff-poppins;
+    font-size: 32px;
+    line-height: 41px;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}

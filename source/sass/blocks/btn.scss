@@ -1,0 +1,38 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: $color-default-white;
+
+  background-color: $color-floral-White;
+  border: none;
+  cursor: pointer;
+
+  transition: opacity $trans-default;
+
+  &--black {
+    background-color: $color-accent-main;
+  }
+
+  &--radius-100 {
+    border-radius: 100px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}
